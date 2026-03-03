@@ -1,0 +1,490 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --bg: #f3f6fb;
+    --surface: #ffffff;
+    --line: #d4deeb;
+    --line-soft: #e5ecf5;
+    --text: #162a45;
+    --text-soft: #5a6f8d;
+    --accent: #136fc0;
+    --accent-dark: #0f5a9d;
+    --radius: 16px;
+}
+
+body {
+    font-family: 'Manrope', 'Segoe UI', sans-serif;
+    background:
+        radial-gradient(circle at -10% -20%, #dfeaf8 0, rgba(223, 234, 248, 0) 40%),
+        radial-gradient(circle at 110% 0%, #ebf3fd 0, rgba(235, 243, 253, 0) 36%),
+        var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.5;
+    padding: 14px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+}
+
+button {
+    border: 0;
+    background: none;
+    cursor: pointer;
+}
+
+.quote-header {
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 10px 28px rgba(18, 36, 61, 0.08);
+}
+
+.quote-header__inner {
+    width: min(1280px, 100%);
+    margin: 0 auto;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Sora', 'Manrope', sans-serif;
+    font-weight: 700;
+    color: #12355d;
+}
+
+.brand .material-symbols-rounded,
+.brand span:last-child {
+    color: var(--accent);
+}
+
+.quote-nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    color: #4f6584;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.quote-nav a:hover {
+    color: var(--accent);
+}
+
+.quote-main {
+    width: min(1280px, 100%);
+    margin: 14px auto 0;
+    display: grid;
+    gap: 14px;
+}
+
+.card {
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--surface);
+    box-shadow: 0 2px 8px rgba(18, 36, 61, 0.04);
+}
+
+.quote-hero {
+    padding: 16px;
+}
+
+.quote-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4px;
+    color: #6b809d;
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.quote-breadcrumb a {
+    color: #3d5f86;
+}
+
+.quote-breadcrumb .material-symbols-rounded {
+    font-size: 0.95rem;
+}
+
+.quote-hero h1 {
+    margin-top: 10px;
+    font-family: 'Sora', 'Manrope', sans-serif;
+    font-size: clamp(1.24rem, 2.8vw, 1.8rem);
+    line-height: 1.28;
+}
+
+.quote-hero p {
+    margin-top: 6px;
+    color: var(--text-soft);
+    font-size: 0.9rem;
+}
+
+.quote-layout {
+    display: grid;
+    gap: 12px;
+}
+
+.quote-content,
+.quote-side {
+    display: grid;
+    gap: 12px;
+}
+
+.quote-card {
+    padding: 16px;
+}
+
+.quote-card h2 {
+    font-family: 'Sora', 'Manrope', sans-serif;
+    font-size: 1rem;
+}
+
+.quote-card p {
+    margin-top: 6px;
+    color: var(--text-soft);
+    font-size: 0.86rem;
+}
+
+.quote-card label {
+    margin-top: 11px;
+    display: grid;
+    gap: 6px;
+}
+
+.quote-card label span {
+    color: #36587d;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.quote-card input,
+.quote-card select,
+.quote-card textarea {
+    border: 1px solid #d6e1ef;
+    border-radius: 10px;
+    background: #fff;
+    color: #2e4a6c;
+    font-size: 0.84rem;
+    padding: 10px 12px;
+    outline: 0;
+}
+
+.quote-card textarea {
+    resize: vertical;
+}
+
+.form-grid {
+    margin-top: 4px;
+    display: grid;
+    gap: 10px;
+}
+
+.upload-box {
+    border: 1px dashed #aac6e4;
+    border-radius: 12px;
+    background: linear-gradient(140deg, #f8fcff, #f1f8ff);
+    padding: 12px;
+    display: grid;
+    grid-template-columns: 36px minmax(0, 1fr);
+    gap: 8px;
+    align-items: start;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.upload-box:hover {
+    border-color: #8fb5dd;
+    background: linear-gradient(140deg, #f2f9ff, #eaf4ff);
+    transform: translateY(-1px);
+}
+
+.upload-box__icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    border: 1px solid #cfe0f2;
+    background: #fff;
+    color: #4a76a3;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.upload-box strong {
+    font-size: 0.85rem;
+    color: #21486f;
+}
+
+.upload-box small {
+    display: block;
+    margin-top: 2px;
+    color: #5c7798;
+    font-size: 0.78rem;
+}
+
+.upload-box__action {
+    margin-top: 8px;
+    display: inline-flex;
+    align-items: center;
+    height: 28px;
+    padding: 0 10px;
+    border-radius: 999px;
+    border: 1px solid #b8d0e8;
+    background: #fff;
+    color: #2f5883;
+    font-size: 0.76rem;
+    font-weight: 800;
+}
+
+.budget-grid {
+    margin-top: 10px;
+    display: grid;
+    gap: 10px;
+}
+
+.budget-summary {
+    margin-top: 12px;
+    display: grid;
+    gap: 8px;
+}
+
+.budget-summary div {
+    border: 1px solid var(--line-soft);
+    border-radius: 10px;
+    background: #fbfdff;
+    padding: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.budget-summary span {
+    color: #607895;
+    font-size: 0.8rem;
+}
+
+.budget-summary strong {
+    color: #18395e;
+    font-size: 0.84rem;
+}
+
+.check-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.check-line input[type='checkbox'] {
+    margin-top: 2px;
+    accent-color: var(--accent);
+}
+
+.actions-row {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.btn {
+    height: 40px;
+    border-radius: 10px;
+    padding: 0 14px;
+    font-size: 0.84rem;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn--primary {
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn--primary:hover {
+    background: var(--accent-dark);
+}
+
+.btn--outline {
+    border: 1px solid #b6cbdf;
+    color: #2d4f74;
+    background: #fff;
+}
+
+.provider-card,
+.tips-card,
+.policy-card {
+    padding: 14px;
+}
+
+.provider-card__head {
+    display: grid;
+    grid-template-columns: 56px minmax(0, 1fr);
+    gap: 10px;
+    align-items: center;
+}
+
+.provider-card__head img {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    object-fit: cover;
+    border: 1px solid #d5e1ef;
+}
+
+.provider-card h3 {
+    font-family: 'Sora', 'Manrope', sans-serif;
+    font-size: 0.96rem;
+}
+
+.provider-card p {
+    margin-top: 2px;
+    color: #5e7795;
+    font-size: 0.8rem;
+}
+
+.provider-card ul {
+    margin-top: 10px;
+    list-style: none;
+    display: grid;
+    gap: 8px;
+}
+
+.provider-card li {
+    color: #466280;
+    font-size: 0.81rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.provider-card .material-symbols-rounded {
+    font-size: 1rem;
+    color: #5f86b1;
+}
+
+.tips-card h3,
+.policy-card h3 {
+    font-family: 'Sora', 'Manrope', sans-serif;
+    font-size: 0.94rem;
+}
+
+.tips-card ol {
+    margin-top: 10px;
+    padding-left: 18px;
+    color: #4a6787;
+    font-size: 0.82rem;
+    display: grid;
+    gap: 6px;
+}
+
+.policy-card p {
+    margin-top: 8px;
+    color: #4e6888;
+    font-size: 0.82rem;
+}
+
+@media (max-width: 820px) {
+    .quote-nav {
+        display: none;
+    }
+
+    .quote-side {
+        order: -1;
+    }
+}
+
+@media (max-width: 540px) {
+    .quote-main {
+        gap: 10px;
+    }
+
+    .quote-hero,
+    .quote-card,
+    .provider-card,
+    .tips-card,
+    .policy-card {
+        padding: 13px;
+    }
+
+    .quote-hero h1 {
+        font-size: 1.22rem;
+    }
+
+    .quote-hero p {
+        font-size: 0.86rem;
+    }
+
+    .quote-card label {
+        margin-top: 10px;
+    }
+
+    .upload-box {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .upload-box__icon {
+        justify-self: start;
+    }
+
+    .budget-summary div {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 2px;
+    }
+
+    .actions-row .btn {
+        flex: 1;
+    }
+}
+
+@media (min-width: 700px) {
+    .form-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .budget-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 1060px) {
+    body {
+        padding: 20px;
+    }
+
+    .quote-layout {
+        grid-template-columns: minmax(0, 1fr) 320px;
+        align-items: start;
+    }
+
+    .quote-side {
+        position: sticky;
+        top: 20px;
+    }
+}

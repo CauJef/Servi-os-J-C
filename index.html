@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceHub — Encontre os Melhores Profissionais da Sua Região</title>
+    <meta name="description"
+        content="Plataforma hiperlocal para encontrar prestadores de serviço confiáveis, avaliados e acessíveis na sua cidade.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Cabecalho -->
+    <header class="header" id="header">
+        <div class="header__inner">
+            <a href="index.html" class="header__logo">
+                <span class="header__logo-icon material-symbols-rounded">hub</span>
+                <span class="header__logo-text">Service<span class="accent">Hub</span></span>
+            </a>
+            <div class="header__actions">
+                <button class="header__btn header__btn--search" id="btn-search" aria-label="Buscar">
+                    <span class="material-symbols-rounded">search</span>
+                </button>
+                <button class="header__btn header__btn--notif" id="btn-notif" aria-label="Notificações"
+                    aria-expanded="false" aria-controls="notifications-popover">
+                    <span class="material-symbols-rounded">notifications</span>
+                    <span class="header__badge">3</span>
+                </button>
+                <div class="notifications-popover" id="notifications-popover" hidden>
+                    <div class="notifications-popover__head">
+                        <strong>Notificações</strong>
+                        <a href="chat.html">Ver todos</a>
+                    </div>
+                    <div class="notifications-popover__empty">Sem notificações</div>
+                </div>
+                <button class="header__btn header__btn--menu" id="btn-menu" aria-label="Abrir menu da conta"
+                    aria-expanded="false" aria-controls="account-menu">
+                    <span class="material-symbols-rounded">menu</span>
+                </button>
+                <div class="account-menu" id="account-menu" hidden>
+                    <div class="account-menu__head">
+                        <strong>Carlos Silva</strong>
+                        <span>Conta profissional</span>
+                    </div>
+
+                    <div class="account-menu__section">
+                        <h3>Minha conta</h3>
+                        <div class="account-menu__grid">
+                            <a href="profile.html">Meu painel</a>
+                            <a href="profile.html">Meu perfil</a>
+                            <a href="upgrade.html">Plano e faturamento</a>
+                            <a href="chat.html">Mensagens</a>
+                        </div>
+                    </div>
+
+                    <div class="account-menu__section">
+                        <h3>Operação</h3>
+                        <div class="account-menu__grid">
+                            <a href="agendamentos.html">Agendamentos</a>
+                            <a href="#marketplace">Encontrar serviços</a>
+                            <a href="trabalho/titulo_do_negocio/index.html">Minha oferta ativa</a>
+                            <a href="#offers">Ofertas da semana</a>
+                        </div>
+                    </div>
+
+                    <div class="account-menu__section">
+                        <h3>Ajuda</h3>
+                        <div class="account-menu__grid">
+                            <a href="chat.html">Central de ajuda</a>
+                            <a href="index.html#marketplace">Como funciona</a>
+                            <a href="index.html#offers">Novidades</a>
+                            <a href="chat.html">Suporte</a>
+                        </div>
+                    </div>
+
+                    <div class="account-menu__foot">
+                        <div class="lang-switch">
+                            <span>Idioma</span>
+                            <div>
+                                <button type="button" class="lang-switch__btn">pt</button>
+                                <button type="button" class="lang-switch__btn">en</button>
+                                <button type="button" class="lang-switch__btn">es</button>
+                            </div>
+                        </div>
+                        <a href="login.html" class="account-menu__logout">Sair</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Busca do cabecalho -->
+        <div class="search-bar" id="search-bar">
+            <div class="search-bar__inner">
+                <span class="material-symbols-rounded search-bar__icon">search</span>
+                <input type="text" id="search-input" class="search-bar__input"
+                    placeholder="Buscar serviço, profissional ou categoria...">
+                <button class="search-bar__close" id="search-close">
+                    <span class="material-symbols-rounded">close</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Bloco principal -->
+    <section class="hero" id="hero">
+        <div class="hero__bg"></div>
+        <div class="hero__content">
+            <h1 class="hero__title">Contrate <span class="hero__highlight">profissionais verificados</span> com
+                histórico real de avaliações</h1>
+            <p class="hero__subtitle">Compare perfis, reputação e faixa de preço em um único painel de contratação.</p>
+            <div class="hero__stats">
+                <div class="hero__stat">
+                    <div class="hero__stat-value">
+                        <span class="hero__stat-number" data-target="150">0</span>
+                        <span class="hero__stat-suffix">+</span>
+                    </div>
+                    <span class="hero__stat-label">Profissionais</span>
+                </div>
+                <div class="hero__stat-divider"></div>
+                <div class="hero__stat">
+                    <div class="hero__stat-value">
+                        <span class="hero__stat-number" data-target="2400">0</span>
+                        <span class="hero__stat-suffix">+</span>
+                    </div>
+                    <span class="hero__stat-label">Avaliações</span>
+                </div>
+                <div class="hero__stat-divider"></div>
+                <div class="hero__stat">
+                    <div class="hero__stat-value">
+                        <span class="hero__stat-number" data-target="98">0</span>
+                        <span class="hero__stat-suffix">%</span>
+                    </div>
+                    <span class="hero__stat-label">Satisfação</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketplace -->
+    <section class="section marketplace" id="marketplace">
+        <div class="marketplace__layout">
+            <aside class="marketplace__filters" aria-label="Filtros de busca">
+                <div class="filter-panel">
+                    <h2 class="filter-panel__title">Filtros de Busca</h2>
+
+                    <div class="filter-group">
+                        <h3 class="filter-group__title">Categoria de serviço</h3>
+                        <label class="filter-check">
+                            <input type="checkbox" checked>
+                            <span>Todas as categorias</span>
+                        </label>
+                        <label class="filter-check">
+                            <input type="checkbox">
+                            <span>Eletricista</span>
+                        </label>
+                        <label class="filter-check">
+                            <input type="checkbox">
+                            <span>Encanador</span>
+                        </label>
+                        <label class="filter-check">
+                            <input type="checkbox">
+                            <span>Limpeza residencial</span>
+                        </label>
+                        <label class="filter-check">
+                            <input type="checkbox">
+                            <span>Barbeiro</span>
+                        </label>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3 class="filter-group__title">Bairro ou região</h3>
+                        <input type="text" class="filter-input" placeholder="Ex: Centro, Vila Nova">
+                    </div>
+
+                    <div class="filter-group">
+                        <h3 class="filter-group__title">Faixa de preço</h3>
+                        <div class="filter-pills">
+                            <button class="filter-pill filter-pill--active" type="button">Todos</button>
+                            <button class="filter-pill" type="button">Até R$ 80</button>
+                            <button class="filter-pill" type="button">R$ 80-150</button>
+                            <button class="filter-pill" type="button">R$ 150+</button>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3 class="filter-group__title">Avaliação mínima</h3>
+                        <div class="filter-pills">
+                            <button class="filter-pill filter-pill--active" type="button">4.5+</button>
+                            <button class="filter-pill" type="button">4.0+</button>
+                            <button class="filter-pill" type="button">3.5+</button>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h3 class="filter-group__title">Disponibilidade</h3>
+                        <select class="filter-select">
+                            <option>Hoje</option>
+                            <option>Próximos 3 dias</option>
+                            <option>Esta semana</option>
+                        </select>
+                    </div>
+                </div>
+            </aside>
+
+            <div class="marketplace__results">
+                <div class="results-toolbar">
+                    <label class="results-search">
+                        <input type="text" placeholder="Buscar">
+                    </label>
+                    <div class="results-toolbar__actions">
+                        <button class="toolbar-icon-btn" type="button" aria-label="Abrir filtros" data-filter-toggle
+                            aria-expanded="false">
+                            <span class="material-symbols-rounded">tune</span>
+                        </button>
+                        <button class="toolbar-icon-btn" type="button" aria-label="Pesquisar" data-focus-search>
+                            <span class="material-symbols-rounded">search</span>
+                        </button>
+                        <button class="btn btn--outline results-toolbar__sort" type="button">
+                            <span class="material-symbols-rounded">swap_vert</span>
+                            Melhor avaliados
+                        </button>
+                    </div>
+                </div>
+
+                <div class="results-chips">
+                    <span class="results-chip">Eletricista <button type="button" aria-label="Remover filtro"><span
+                                class="material-symbols-rounded">close</span></button></span>
+                    <span class="results-chip">Centro <button type="button" aria-label="Remover filtro"><span
+                                class="material-symbols-rounded">close</span></button></span>
+                    <span class="results-chip">Disponível hoje <button type="button" aria-label="Remover filtro"><span
+                                class="material-symbols-rounded">close</span></button></span>
+                </div>
+
+                <div class="results-list">
+                    <article class="service-result">
+                        <div class="service-result__head">
+                            <div>
+                                <p class="service-result__category">Eletricista residencial</p>
+                                <h3 class="service-result__title"><a href="trabalho/titulo_do_negocio/index.html"
+                                        class="service-result__title-link">Instalação
+                                        e manutenção elétrica com atendimento no mesmo dia</a></h3>
+                                <p class="service-result__meta">Publicado há 1 hora · 7 solicitações hoje</p>
+                            </div>
+                            <div class="service-result__price-wrap">
+                                <span class="service-result__price-label">A partir de</span>
+                                <strong class="service-result__price">R$ 80</strong>
+                            </div>
+                        </div>
+
+                        <p class="service-result__desc">
+                            Atendimento para curtos, tomadas, iluminação, troca de disjuntores e pequenos reparos.
+                            Profissional verificado com avaliação 5.0 e retorno rápido no chat.
+                        </p>
+
+                        <div class="service-result__tags">
+                            <span class="tag">Emergência 24h</span>
+                            <span class="tag">Residencial</span>
+                            <span class="tag">Com nota fiscal</span>
+                        </div>
+
+                        <div class="service-result__footer">
+                            <div class="service-result__provider">
+                                <img src="assets/provider_electrician.png" alt="Carlos Silva" class="service-result__avatar">
+                                <div>
+                                    <strong>Carlos Silva</strong>
+                                    <span>Centro · 1,2 km · 5.0 (127)</span>
+                                </div>
+                            </div>
+                            <div class="service-result__actions">
+                                <a href="profile.html" class="btn btn--outline btn--sm">Ver Perfil</a>
+                                <a href="solicitar-orcamento.html" class="btn btn--primary btn--sm">Solicitar
+                                    Orçamento</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="service-result">
+                        <div class="service-result__head">
+                            <div>
+                                <p class="service-result__category">Limpeza residencial</p>
+                                <h3 class="service-result__title"><a href="trabalho/titulo_do_negocio/index.html"
+                                        class="service-result__title-link">Diarista
+                                        para limpeza completa com produtos inclusos</a></h3>
+                                <p class="service-result__meta">Publicado há 2 horas · 12 solicitações hoje</p>
+                            </div>
+                            <div class="service-result__price-wrap">
+                                <span class="service-result__price-label">A partir de</span>
+                                <strong class="service-result__price">R$ 120</strong>
+                            </div>
+                        </div>
+
+                        <p class="service-result__desc">
+                            Serviço completo para casa ou apartamento, incluindo cozinha e banheiros.
+                            Agendamento flexível e avaliações consistentes nos últimos 6 meses.
+                        </p>
+
+                        <div class="service-result__tags">
+                            <span class="tag">Pós-obra</span>
+                            <span class="tag">Residencial</span>
+                            <span class="tag">Produtos inclusos</span>
+                        </div>
+
+                        <div class="service-result__footer">
+                            <div class="service-result__provider">
+                                <img src="assets/provider_cleaner.png" alt="Maria Souza" class="service-result__avatar">
+                                <div>
+                                    <strong>Maria Souza</strong>
+                                    <span>Vila Nova · 2,1 km · 4.9 (203)</span>
+                                </div>
+                            </div>
+                            <div class="service-result__actions">
+                                <a href="profile.html" class="btn btn--outline btn--sm">Ver Perfil</a>
+                                <a href="solicitar-orcamento.html" class="btn btn--primary btn--sm">Solicitar
+                                    Orçamento</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="service-result">
+                        <div class="service-result__head">
+                            <div>
+                                <p class="service-result__category">Barbearia a domicílio</p>
+                                <h3 class="service-result__title"><a href="trabalho/titulo_do_negocio/index.html"
+                                        class="service-result__title-link">Corte,
+                                        barba e acabamento premium com agendamento online</a></h3>
+                                <p class="service-result__meta">Publicado há 3 horas · 5 solicitações hoje</p>
+                            </div>
+                            <div class="service-result__price-wrap">
+                                <span class="service-result__price-label">A partir de</span>
+                                <strong class="service-result__price">R$ 45</strong>
+                            </div>
+                        </div>
+
+                        <p class="service-result__desc">
+                            Atendimento em domicílio para corte masculino, barba e finalização.
+                            Ideal para quem precisa de horário noturno ou atendimento no fim de semana.
+                        </p>
+
+                        <div class="service-result__tags">
+                            <span class="tag">Agendamento</span>
+                            <span class="tag">Fins de semana</span>
+                            <span class="tag">Atende em casa</span>
+                        </div>
+
+                        <div class="service-result__footer">
+                            <div class="service-result__provider">
+                                <img src="assets/provider_barber.png" alt="Rafael Mendes" class="service-result__avatar">
+                                <div>
+                                    <strong>Rafael Mendes</strong>
+                                    <span>Jardim Sul · 3,4 km · 4.8 (89)</span>
+                                </div>
+                            </div>
+                            <div class="service-result__actions">
+                                <a href="profile.html" class="btn btn--outline btn--sm">Ver Perfil</a>
+                                <a href="solicitar-orcamento.html" class="btn btn--primary btn--sm">Solicitar
+                                    Orçamento</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profissionais em destaque -->
+    <section class="section featured" id="featured">
+        <div class="section__header">
+            <div>
+                <h2 class="section__title">Profissionais em Destaque</h2>
+                <p class="section__subtitle">Os mais bem avaliados da sua cidade</p>
+            </div>
+            <a href="index.html#marketplace" class="section__link">Ver todos <span
+                    class="material-symbols-rounded">arrow_forward</span></a>
+        </div>
+        <div class="featured__carousel" id="featured-carousel">
+            <div class="provider-card provider-card--featured">
+                <div class="provider-card__img-wrap">
+                    <img src="assets/provider_electrician.png" alt="Carlos Silva" class="provider-card__img">
+                    <span class="provider-card__verified" title="Verificado">
+                        <span class="material-symbols-rounded">verified</span>
+                    </span>
+                </div>
+                <div class="provider-card__info">
+                    <h3 class="provider-card__name">Carlos Silva</h3>
+                    <p class="provider-card__role">Eletricista Residencial</p>
+                    <div class="provider-card__rating">
+                        <div class="stars">
+                            <span class="material-symbols-rounded star--filled">star</span>
+                            <span class="material-symbols-rounded star--filled">star</span>
+                            <span class="material-symbols-rounded star--filled">star</span>
+                            <span class="material-symbols-rounded star--filled">star</span>
+                            <span class="material-symbols-rounded star--filled">star</span>
+                        </div>
+                        <span class="provider-card__rating-text">5.0 (127 avaliações)</span>
+                    </div>
+                    <div class="provider-card__tags">
+                        <span class="tag">Instalação</span>
+                        <span class="tag">Manutenção</span>
+                        <span class="tag">Emergência 24h</span>
+                    </div>
+                    <div class="provider-card__footer">
+                        <span class="provider-card__price">A partir de <strong>R$ 80</strong></span>
+                        <a href="solicitar-orcamento.html" class="btn btn--primary btn--sm">Contratar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="provider-card provider-card--featured">
+                <div class="provider-card__img-wrap">
+                    <img src="assets/provider_barber.png" alt="Rafael Mendes" class="provider-card__img">
+                    <span class="provider-card__verified" title="Verificado">
+                        <span class="material-symbols-rounded">verified</span>
+                    </span>
+                </div>
+                <div class="provider-card__info">
+                    <h3 class="provider-card__name">Rafael Mendes</h3>
+                    <p class="provider-card__role">Barbeiro & Hair Designer</p>
+                    <div class="provider-card__rating">
+                        <div class="stars">
+                            <span class="material-symbols-rounded star--filled">star</span>
+                            <span class="material-symbols-rounded star--filled">star</span>
+                            <span class="material-symbols-rounded star--filled">star</span>
+                            <span class="material-symbols-rounded star--filled">star</span>
+                            <span class="material-symbols-rounded star--half">star_half</span>
+                        </div>
+                        <span class="provider-card__rating-text">4.8 (89 avaliações)</span>
+                    </div>
+                    <div class="provider-card__tags">
+                        <span class="tag">Corte</span>
+                        <span class="tag">Barba</span>
+                        <span class="tag">Degradê</span>
+                    </div>
+                    <div class="provider-card__footer">
+                        <span class="provider-card__price">A partir de <strong>R$ 35</strong></span>
+                        <a href="solicitar-orcamento.html" class="btn btn--primary btn--sm">Agendar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="provider-card provider-card--featured">
+                <div class="provider-card__img-wrap">
+                    <img src="assets/provider_cleaner.png" alt="Maria Souza" class="provider-card__img">
+                    <span class="provider-card__verified" title="Verificado">
+                        <span class="material-symbols-rounded">verified</span>
+                    </span>
+                </div>
+                <div class="provider-card__info">
+                    <h3 class="provider-card__name">Maria Souza</h3>
+                    <p class="provider-card__role">Limpeza Residencial</p>
+                    <div class="provider-card__rating">
+                        <div class="stars">
+                            <span class="material-symbols-rounded star--filled">star</span>
+                            <span class="material-symbols-rounded star--filled">star</span>
+                            <span class="material-symbols-rounded star--filled">star</span>
+                            <span class="material-symbols-rounded star--filled">star</span>
+                            <span class="material-symbols-rounded star--filled">star</span>
+                        </div>
+                        <span class="provider-card__rating-text">4.9 (203 avaliações)</span>
+                    </div>
+                    <div class="provider-card__tags">
+                        <span class="tag">Residencial</span>
+                        <span class="tag">Pós-obra</span>
+                        <span class="tag">Comercial</span>
+                    </div>
+                    <div class="provider-card__footer">
+                        <span class="provider-card__price">A partir de <strong>R$ 120</strong></span>
+                        <a href="solicitar-orcamento.html" class="btn btn--primary btn--sm">Contratar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-dots" id="featured-dots"></div>
+    </section>
+
+    <!-- Ofertas -->
+    <section class="section offers" id="offers">
+        <div class="section__header">
+            <div>
+                <h2 class="section__title">Ofertas Recentes</h2>
+                <p class="section__subtitle">Promoções exclusivas de profissionais da sua região</p>
+            </div>
+        </div>
+        <div class="offers__grid">
+            <div class="offer-card">
+                <div class="offer-card__discount">-20%</div>
+                <div class="offer-card__icon">
+                    <span class="material-symbols-rounded">electric_bolt</span>
+                </div>
+                <div class="offer-card__info">
+                    <h4 class="offer-card__title">Revisão Elétrica Completa</h4>
+                    <p class="offer-card__provider">Carlos Silva — Eletricista</p>
+                    <div class="offer-card__price-row">
+                        <span class="offer-card__price-old">R$ 200</span>
+                        <span class="offer-card__price-new">R$ 160</span>
+                    </div>
+                    <span class="offer-card__validity">Válido até 15/03</span>
+                </div>
+            </div>
+            <div class="offer-card">
+                <div class="offer-card__discount">-30%</div>
+                <div class="offer-card__icon">
+                    <span class="material-symbols-rounded">content_cut</span>
+                </div>
+                <div class="offer-card__info">
+                    <h4 class="offer-card__title">Combo Corte + Barba</h4>
+                    <p class="offer-card__provider">Rafael Mendes — Barbeiro</p>
+                    <div class="offer-card__price-row">
+                        <span class="offer-card__price-old">R$ 60</span>
+                        <span class="offer-card__price-new">R$ 42</span>
+                    </div>
+                    <span class="offer-card__validity">Válido até 10/03</span>
+                </div>
+            </div>
+            <div class="offer-card">
+                <div class="offer-card__discount">-15%</div>
+                <div class="offer-card__icon">
+                    <span class="material-symbols-rounded">cleaning_services</span>
+                </div>
+                <div class="offer-card__info">
+                    <h4 class="offer-card__title">Limpeza Pós-Obra</h4>
+                    <p class="offer-card__provider">Maria Souza — Limpeza</p>
+                    <div class="offer-card__price-row">
+                        <span class="offer-card__price-old">R$ 350</span>
+                        <span class="offer-card__price-new">R$ 297</span>
+                    </div>
+                    <span class="offer-card__validity">Válido até 20/03</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodape -->
+    <footer class="footer" id="footer">
+        <div class="footer__top">
+            <div class="footer__brand">
+                <a href="index.html" class="footer__logo">
+                    <span class="material-symbols-rounded">hub</span>
+                    Service<span class="accent">Hub</span>
+                </a>
+                <p class="footer__desc">Conectando profissionais e clientes na sua região com segurança e confiança.</p>
+            </div>
+            <div class="footer__links">
+                <div class="footer__col">
+                    <h4>Plataforma</h4>
+                    <a href="index.html#hero">Sobre nós</a>
+                    <a href="index.html#marketplace">Como funciona</a>
+                    <a href="upgrade.html">Upgrade</a>
+                    <a href="index.html#offers">Blog</a>
+                </div>
+                <div class="footer__col">
+                    <h4>Suporte</h4>
+                    <a href="chat.html">Central de Ajuda</a>
+                    <a href="chat.html">Contato</a>
+                    <a href="login.html">Termos de Uso</a>
+                    <a href="login.html">Privacidade</a>
+                </div>
+                <div class="footer__col">
+                    <h4>Profissionais</h4>
+                    <a href="login.html">Cadastre-se</a>
+                    <a href="profile.html">Dicas de Perfil</a>
+                    <a href="upgrade.html">Ganhe Destaque</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>&copy; 2026 ServiceHub. Todos os direitos reservados.</p>
+            <div class="footer__social">
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                    </svg>
+                </a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                    </svg>
+                </a>
+                <a href="https://whatsapp.com" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path
+                            d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Navegacao mobile -->
+    <nav class="bottom-nav" id="bottom-nav">
+        <a href="#hero" class="bottom-nav__item bottom-nav__item--active">
+            <span class="material-symbols-rounded">home</span>
+            <span>Início</span>
+        </a>
+        <a href="#featured" class="bottom-nav__item">
+            <span class="material-symbols-rounded">category</span>
+            <span>Destaques</span>
+        </a>
+        <a href="#marketplace" class="bottom-nav__item bottom-nav__item--center">
+            <span class="material-symbols-rounded">explore</span>
+            <span>Buscar</span>
+        </a>
+        <a href="#offers" class="bottom-nav__item">
+            <span class="material-symbols-rounded">local_offer</span>
+            <span>Ofertas</span>
+        </a>
+        <a href="profile.html" class="bottom-nav__item">
+            <span class="material-symbols-rounded">person</span>
+            <span>Perfil</span>
+        </a>
+    </nav>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

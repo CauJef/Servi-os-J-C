@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceHub - Mensagens</title>
+    <meta name="description"
+        content="Central de mensagens do profissional no ServiceHub com histórico de conversas, status de atendimento e respostas rápidas.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="chat.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="topbar__inner">
+            <a href="index.html" class="brand">
+                <span class="material-symbols-rounded">hub</span>
+                Service<span>Hub</span>
+            </a>
+            <nav class="topbar__actions">
+                <a href="profile.html">Painel</a>
+                <a href="agendamentos.html">Agendamentos</a>
+                <a href="index.html">Marketplace</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="chat-app" id="chat-app">
+        <aside class="card inbox-panel">
+            <div class="panel-head">
+                <h1>Mensagens</h1>
+                <span class="counter">5 não lidas</span>
+            </div>
+
+            <label class="search-field">
+                <span class="material-symbols-rounded">search</span>
+                <input type="text" placeholder="Buscar cliente ou serviço">
+            </label>
+
+            <div class="inbox-filters">
+                <button class="pill pill--active" type="button">Todas</button>
+                <button class="pill" type="button">Não lidas</button>
+                <button class="pill" type="button">Urgentes</button>
+            </div>
+
+            <div class="thread-list">
+                <article class="thread thread--active" data-client="Juliana Martins"
+                    data-status="Online agora · Solicitação aberta há 21 min"
+                    data-avatar="assets/provider_cleaner.png" data-thread-id="juliana" tabindex="0" role="button">
+                    <img src="assets/provider_cleaner.png" alt="Cliente Juliana">
+                    <div class="thread__info">
+                        <div class="thread__head">
+                            <strong>Juliana Martins</strong>
+                            <span>há 2 min</span>
+                        </div>
+                        <p>Consegue vir hoje para avaliar o quadro?</p>
+                        <small>Troca de disjuntor geral · Centro</small>
+                    </div>
+                    <em>2</em>
+                </article>
+
+                <article class="thread" data-client="Mercado Bom Preço"
+                    data-status="Online agora · Solicitação aberta há 45 min" data-avatar="assets/provider_barber.png"
+                    data-thread-id="mercado" tabindex="0" role="button">
+                    <img src="assets/provider_barber.png" alt="Cliente Mercado Bom Preço">
+                    <div class="thread__info">
+                        <div class="thread__head">
+                            <strong>Mercado Bom Preço</strong>
+                            <span>há 18 min</span>
+                        </div>
+                        <p>Perfeito, aprovado o orçamento.</p>
+                        <small>Revisão elétrica da loja · Campolim</small>
+                    </div>
+                </article>
+
+                <article class="thread" data-client="Sônia Andrade"
+                    data-status="Último acesso hoje · Solicitação aberta há 1 dia" data-avatar="assets/provider_security.png"
+                    data-thread-id="sonia" tabindex="0" role="button">
+                    <img src="assets/provider_security.png" alt="Cliente Sônia">
+                    <div class="thread__info">
+                        <div class="thread__head">
+                            <strong>Sônia Andrade</strong>
+                            <span>ontem</span>
+                        </div>
+                        <p>Enviei as fotos da instalação antiga.</p>
+                        <small>Iluminação LED residencial · Vila Nova</small>
+                    </div>
+                </article>
+            </div>
+        </aside>
+
+        <section class="card chat-panel">
+            <div class="chat-head">
+                <button class="chat-head__back" id="chat-back" type="button" aria-label="Voltar para lista de mensagens">
+                    <span class="material-symbols-rounded">arrow_back</span>
+                </button>
+                <div class="chat-head__client">
+                    <img src="assets/provider_cleaner.png" alt="Juliana Martins" id="chat-client-avatar">
+                    <div>
+                        <h2 id="chat-client-name">Juliana Martins</h2>
+                        <p id="chat-client-status">Online agora · Solicitação aberta há 21 min</p>
+                    </div>
+                </div>
+                <div class="chat-head__actions">
+                    <a href="agendamentos.html">Agendar visita</a>
+                    <button type="button" id="chat-context-toggle" aria-label="Abrir contexto do atendimento"
+                        aria-expanded="false">
+                        <span class="material-symbols-rounded">more_horiz</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="chat-body" id="chat-body">
+                <div class="bubble bubble--in">
+                    <p>Oi, Carlos. Caiu a energia da cozinha e alguns cômodos. Consegue avaliar hoje?</p>
+                    <span>17:12</span>
+                </div>
+                <div class="bubble bubble--out">
+                    <p>Consigo sim. Estou no Centro e tenho janela livre às 19h. Posso fazer diagnóstico e orçamento no
+                        local.</p>
+                    <span>17:14</span>
+                </div>
+                <div class="bubble bubble--in">
+                    <p>Ótimo. Pode ser às 19h. Precisa de alguma informação antes?</p>
+                    <span>17:15</span>
+                </div>
+                <div class="bubble bubble--out">
+                    <p>Se puder, envie foto do quadro elétrico e confirme o endereço. Já deixo o atendimento pré-agendado.
+                    </p>
+                    <span>17:16</span>
+                </div>
+            </div>
+
+            <form class="composer">
+                <button type="button" aria-label="Anexar arquivo">
+                    <span class="material-symbols-rounded">attach_file</span>
+                </button>
+                <input type="text" placeholder="Escreva sua resposta para o cliente...">
+                <button type="submit" class="send-btn" aria-label="Enviar mensagem">
+                    <span class="material-symbols-rounded">send</span>
+                </button>
+            </form>
+        </section>
+
+        <aside class="card context-panel" id="context-panel">
+            <div class="context-panel__head">
+                <h3>Contexto do atendimento</h3>
+                <button type="button" class="context-panel__close" id="context-close"
+                    aria-label="Fechar contexto do atendimento">
+                    <span class="material-symbols-rounded">close</span>
+                </button>
+            </div>
+            <ul class="context-list">
+                <li><span>Serviço</span><strong>Troca de disjuntor geral</strong></li>
+                <li><span>Bairro</span><strong>Centro</strong></li>
+                <li><span>Faixa estimada</span><strong>R$ 160 - 320</strong></li>
+                <li><span>Prioridade</span><strong class="text-warn">Urgente hoje</strong></li>
+            </ul>
+
+            <h4>Respostas rápidas</h4>
+            <div class="quick-replies">
+                <button type="button">Posso atender hoje às 19h.</button>
+                <button type="button">Envio orçamento após visita técnica.</button>
+                <button type="button">Atendimento com nota fiscal e garantia.</button>
+            </div>
+
+            <h4>Próxima ação</h4>
+            <a href="agendamentos.html" class="cta">Confirmar horário na agenda</a>
+        </aside>
+    </main>
+    <button type="button" class="context-overlay" id="context-overlay" aria-label="Fechar contexto" hidden></button>
+    <script src="chat.js"></script>
+</body>
+
+</html>

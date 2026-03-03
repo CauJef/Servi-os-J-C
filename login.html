@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceHub - Acesso e Configuração Inicial</title>
+    <meta name="description"
+        content="Acesso inicial ao ServiceHub para configurar perfil, localidade e preferências de contratação de serviços locais.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <main class="auth-shell">
+        <aside class="auth-aside">
+            <a href="index.html" class="auth-brand auth-brand--aside">
+                <span class="material-symbols-rounded">hub</span>
+                Service<span>Hub</span>
+            </a>
+            <h1 class="auth-aside__title">Acesso inteligente para serviços locais.</h1>
+            <p class="auth-aside__text">Configure sua conta em poucos passos e receba recomendações de profissionais da
+                sua região.</p>
+            <ul class="auth-aside__bullets">
+                <li><span class="material-symbols-rounded">verified_user</span> Perfis verificados e avaliações reais
+                </li>
+                <li><span class="material-symbols-rounded">distance</span> Busca por bairro e distância</li>
+                <li><span class="material-symbols-rounded">bolt</span> Solicitação de orçamento em minutos</li>
+            </ul>
+        </aside>
+
+        <section class="auth-panel">
+            <div class="auth-top">
+                <div class="auth-progress">
+                    <div class="auth-progress__fill" id="auth-progress-fill"></div>
+                </div>
+                <div class="auth-top__row">
+                    <a href="index.html" class="auth-brand">
+                        <span class="material-symbols-rounded">hub</span>
+                        Service<span>Hub</span>
+                    </a>
+                    <button type="button" class="auth-skip" id="auth-skip-btn">Pular</button>
+                </div>
+            </div>
+
+            <form class="auth-form" id="auth-form" novalidate>
+                <section class="auth-step auth-step--active" data-step="1" data-progress="18">
+                    <h2 class="auth-step__title">Em qual cidade você quer começar?</h2>
+                    <p class="auth-step__subtitle">Esse dado melhora as recomendações e mostra prestadores próximos de
+                        você.</p>
+
+                    <label class="field-label" for="user-city">Cidade base</label>
+                    <input id="user-city" name="user_city" class="field-input" type="text"
+                        placeholder="Ex: Sorocaba, SP" required>
+
+                    <div class="auth-actions auth-actions--end">
+                        <button class="btn btn--primary" type="button" data-next>Continuar</button>
+                    </div>
+                </section>
+
+                <section class="auth-step" data-step="2" data-progress="36">
+                    <h2 class="auth-step__title">Como você vai usar o ServiceHub?</h2>
+                    <p class="auth-step__subtitle">Você pode alterar esse modo depois nas configurações da conta.</p>
+
+                    <input type="hidden" id="account-mode" name="account_mode" value="cliente" required>
+
+                    <div class="option-cards" role="radiogroup" aria-label="Tipo de conta">
+                        <button class="option-card option-card--active" type="button" data-mode="cliente"
+                            aria-pressed="true">
+                            <span class="material-symbols-rounded">person_search</span>
+                            <strong>Quero contratar profissionais</strong>
+                            <small>Para casa, negócio ou demandas pontuais.</small>
+                        </button>
+                        <button class="option-card" type="button" data-mode="profissional" aria-pressed="false">
+                            <span class="material-symbols-rounded">engineering</span>
+                            <strong>Quero oferecer serviços</strong>
+                            <small>Para receber pedidos e novos clientes locais.</small>
+                        </button>
+                    </div>
+
+                    <div class="auth-actions">
+                        <button class="btn btn--ghost-icon" type="button" data-prev aria-label="Voltar">
+                            <span class="material-symbols-rounded">arrow_back</span>
+                        </button>
+                        <button class="btn btn--primary" type="button" data-next>Continuar</button>
+                    </div>
+                </section>
+
+                <section class="auth-step" data-step="3" data-progress="56">
+                    <h2 class="auth-step__title">Confirmação de idade</h2>
+                    <p class="auth-step__subtitle">Precisamos desse dado para cumprir os requisitos de uso da plataforma.
+                    </p>
+
+                    <div class="choice-list">
+                        <label class="choice-item">
+                            <input type="radio" name="is_adult" value="sim" required>
+                            <span>Tenho 18 anos ou mais</span>
+                        </label>
+                        <label class="choice-item">
+                            <input type="radio" name="is_adult" value="nao" required>
+                            <span>Tenho menos de 18 anos</span>
+                        </label>
+                    </div>
+
+                    <div class="auth-actions">
+                        <button class="btn btn--ghost-icon" type="button" data-prev aria-label="Voltar">
+                            <span class="material-symbols-rounded">arrow_back</span>
+                        </button>
+                        <button class="btn btn--primary" type="button" data-next>Continuar</button>
+                    </div>
+                </section>
+
+                <section class="auth-step" data-step="4" data-progress="78">
+                    <h2 class="auth-step__title">Preferências de busca inicial</h2>
+                    <p class="auth-step__subtitle">Defina categorias para personalizar sua primeira tela de resultados.
+                    </p>
+
+                    <label class="field-label" for="service-input">Categorias de interesse</label>
+                    <div class="field-inline">
+                        <input id="service-input" class="field-input" type="text"
+                            placeholder="Digite uma categoria e pressione Enter">
+                    </div>
+
+                    <div class="chips" id="service-chips" aria-label="Categorias selecionadas">
+                        <span class="chip">Eletricista</span>
+                        <span class="chip">Limpeza</span>
+                    </div>
+
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="notify_offers" checked>
+                        <span>Receber ofertas e alertas de profissionais próximos</span>
+                    </label>
+
+                    <div class="auth-actions">
+                        <button class="btn btn--ghost-icon" type="button" data-prev aria-label="Voltar">
+                            <span class="material-symbols-rounded">arrow_back</span>
+                        </button>
+                        <button class="btn btn--primary" type="button" data-next>Continuar</button>
+                    </div>
+                </section>
+
+                <section class="auth-step" data-step="5" data-progress="100">
+                    <h2 class="auth-step__title">Criar acesso</h2>
+                    <p class="auth-step__subtitle">Finalize seu cadastro para entrar no painel do ServiceHub.</p>
+
+                    <label class="field-label" for="user-email">E-mail</label>
+                    <input id="user-email" name="user_email" class="field-input" type="email"
+                        placeholder="voce@email.com" required>
+
+                    <label class="field-label" for="user-password">Senha</label>
+                    <input id="user-password" name="user_password" class="field-input" type="password"
+                        placeholder="Mínimo de 8 caracteres" minlength="8" required>
+
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="accept_terms" required>
+                        <span>Li e concordo com os termos de uso e política de privacidade.</span>
+                    </label>
+
+                    <div class="auth-actions">
+                        <button class="btn btn--ghost-icon" type="button" data-prev aria-label="Voltar">
+                            <span class="material-symbols-rounded">arrow_back</span>
+                        </button>
+                        <button class="btn btn--primary" type="submit">Criar conta e entrar</button>
+                    </div>
+                </section>
+            </form>
+
+            <p class="auth-foot">Já possui conta? <a href="profile.html">Entrar agora</a></p>
+        </section>
+    </main>
+
+    <script src="login.js"></script>
+</body>
+
+</html>

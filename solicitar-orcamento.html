@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceHub - Solicitar Orçamento</title>
+    <meta name="description"
+        content="Página para solicitar orçamento no ServiceHub com escopo do serviço, disponibilidade e estimativa de investimento.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="solicitar-orcamento.css">
+</head>
+
+<body>
+    <header class="quote-header">
+        <div class="quote-header__inner">
+            <a href="index.html" class="brand">
+                <span class="material-symbols-rounded">hub</span>
+                Service<span>Hub</span>
+            </a>
+            <nav class="quote-nav">
+                <a href="index.html">Marketplace</a>
+                <a href="chat.html">Mensagens</a>
+                <a href="profile.html">Perfil</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="quote-main">
+        <section class="card quote-hero">
+            <div class="quote-breadcrumb">
+                <a href="index.html">Marketplace</a>
+                <span class="material-symbols-rounded">chevron_right</span>
+                <a href="trabalho/titulo_do_negocio/index.html">Detalhes da oferta</a>
+                <span class="material-symbols-rounded">chevron_right</span>
+                <span>Solicitar orçamento</span>
+            </div>
+            <h1>Solicitar orçamento para este serviço</h1>
+            <p>Compartilhe os detalhes do atendimento e receba uma proposta objetiva com prazo, valor e escopo validado.
+            </p>
+        </section>
+
+        <div class="quote-layout">
+            <section class="quote-content">
+                <article class="card quote-card">
+                    <h2>Informações da solicitação</h2>
+                    <p>Preencha os dados principais para o profissional entender o atendimento com precisão.</p>
+
+                    <div class="form-grid">
+                        <label>
+                            <span>Disponibilidade para início</span>
+                            <select>
+                                <option>Hoje</option>
+                                <option>Amanhã</option>
+                                <option>Próximos 3 dias</option>
+                            </select>
+                        </label>
+                        <label>
+                            <span>Data preferida</span>
+                            <input type="date" value="2026-03-04">
+                        </label>
+                    </div>
+
+                    <label>
+                        <span>Quais detalhes do atendimento você quer incluir?</span>
+                        <textarea rows="5"
+                            placeholder="Ex: serviço desejado, ambiente, urgência, materiais já disponíveis e pontos de atenção."></textarea>
+                    </label>
+
+                    <div class="form-grid">
+                        <label>
+                            <span>Endereço do atendimento</span>
+                            <input type="text" placeholder="Rua, número, bairro">
+                        </label>
+                        <label>
+                            <span>Ponto de referência</span>
+                            <input type="text" placeholder="Ex: próximo ao mercado central">
+                        </label>
+                    </div>
+
+                    <label class="upload-box">
+                        <span class="upload-box__icon material-symbols-rounded">upload_file</span>
+                        <div>
+                            <strong>Anexar fotos ou vídeos do local</strong>
+                            <small>Ajuda a dar contexto e agiliza a proposta.</small>
+                            <span class="upload-box__action">Selecionar arquivos</span>
+                        </div>
+                    </label>
+                </article>
+
+                <article class="card quote-card">
+                    <h2>Estimativa de investimento</h2>
+                    <p>Simule um valor inicial para facilitar a negociação no chat.</p>
+
+                    <div class="budget-grid">
+                        <label>
+                            <span>Horas estimadas</span>
+                            <input type="number" id="hours-input" min="1" value="4">
+                        </label>
+                        <label>
+                            <span>Valor total estimado (R$)</span>
+                            <input type="number" id="total-input" min="0" step="10" value="320">
+                        </label>
+                    </div>
+
+                    <div class="budget-summary">
+                        <div>
+                            <span>Taxa de intermediação (8%)</span>
+                            <strong id="fee-output">R$ 25,60</strong>
+                        </div>
+                        <div>
+                            <span>Valor líquido previsto ao profissional</span>
+                            <strong id="net-output">R$ 294,40</strong>
+                        </div>
+                        <div>
+                            <span>Preço médio por hora</span>
+                            <strong id="hourly-output">R$ 80,00/h</strong>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card quote-card">
+                    <h2>Detalhes finais</h2>
+                    <label class="check-line">
+                        <input type="checkbox" checked>
+                        <span>Permitir contato por chat para ajustes antes da visita.</span>
+                    </label>
+                    <label class="check-line">
+                        <input type="checkbox" checked>
+                        <span>Receber opções de outros profissionais verificados da região.</span>
+                    </label>
+
+                    <div class="actions-row">
+                        <button type="button" class="btn btn--outline">Salvar rascunho</button>
+                        <button type="button" class="btn btn--primary">Enviar solicitação</button>
+                    </div>
+                </article>
+            </section>
+
+            <aside class="quote-side">
+                <article class="card provider-card">
+                    <div class="provider-card__head">
+                        <img src="assets/provider_electrician.png" alt="Carlos Silva">
+                        <div>
+                            <h3>Carlos Silva</h3>
+                            <p>Eletricista verificado · Centro</p>
+                        </div>
+                    </div>
+                    <ul>
+                        <li><span class="material-symbols-rounded">star</span> 5.0 com 127 avaliações</li>
+                        <li><span class="material-symbols-rounded">schedule</span> Responde em média em 18 minutos</li>
+                        <li><span class="material-symbols-rounded">task_alt</span> 318 atendimentos concluídos</li>
+                    </ul>
+                </article>
+
+                <article class="card tips-card">
+                    <h3>Como receber uma proposta melhor</h3>
+                    <ol>
+                        <li>Descreva o serviço desejado com contexto e urgência real.</li>
+                        <li>Informe fotos e dados do local para reduzir retrabalho.</li>
+                        <li>Defina uma faixa de investimento inicial.</li>
+                        <li>Confirme sua janela de atendimento disponível.</li>
+                    </ol>
+                </article>
+
+                <article class="card policy-card">
+                    <h3>Política da plataforma</h3>
+                    <p>Todas as negociações e anexos devem permanecer no chat do ServiceHub para garantir suporte,
+                        histórico e segurança em caso de revisão.</p>
+                </article>
+            </aside>
+        </div>
+    </main>
+
+    <script src="solicitar-orcamento.js"></script>
+</body>
+
+</html>

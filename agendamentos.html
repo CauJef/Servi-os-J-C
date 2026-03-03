@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceHub - Agendamentos</title>
+    <meta name="description"
+        content="Painel de agendamentos do profissional no ServiceHub com edição de horários, confirmação de visitas e gestão de disponibilidade.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="agendamentos.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <div class="topbar__inner">
+            <a href="index.html" class="brand">
+                <span class="material-symbols-rounded">hub</span>
+                Service<span>Hub</span>
+            </a>
+            <nav class="topbar__actions">
+                <a href="profile.html">Painel</a>
+                <a href="chat.html">Mensagens</a>
+                <a href="index.html">Marketplace</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="schedule-app">
+        <section class="main-column">
+            <article class="card planner">
+                <div class="planner__head">
+                    <div>
+                        <h1>Agendamentos da semana</h1>
+                        <p>Visão de edição para organizar rotas, confirmações e janelas disponíveis.</p>
+                    </div>
+                    <div class="planner__actions">
+                        <button type="button">Bloquear horário</button>
+                        <button type="button" class="btn-primary">Novo atendimento</button>
+                    </div>
+                </div>
+
+                <div class="planner__days">
+                    <article class="day-col">
+                        <header>
+                            <strong>Terça</strong>
+                            <span>03 mar</span>
+                        </header>
+                        <div class="slot slot--busy">
+                            <small>09:00 - 10:30</small>
+                            <strong>Revisão elétrica</strong>
+                            <p>Condomínio Atlas · Jardim Sul</p>
+                        </div>
+                        <div class="slot slot--busy">
+                            <small>14:00 - 15:00</small>
+                            <strong>Troca de disjuntor</strong>
+                            <p>Juliana M. · Centro</p>
+                        </div>
+                        <div class="slot slot--open">
+                            <small>19:00 - 20:00</small>
+                            <strong>Janela livre</strong>
+                            <p>Disponível para encaixe</p>
+                        </div>
+                    </article>
+
+                    <article class="day-col">
+                        <header>
+                            <strong>Quarta</strong>
+                            <span>04 mar</span>
+                        </header>
+                        <div class="slot slot--busy">
+                            <small>10:00 - 12:00</small>
+                            <strong>Instalação LED</strong>
+                            <p>Loja Prime · Campolim</p>
+                        </div>
+                        <div class="slot slot--pending">
+                            <small>16:30 - 17:30</small>
+                            <strong>Pendente de confirmação</strong>
+                            <p>Sônia Andrade · Vila Nova</p>
+                        </div>
+                        <div class="slot slot--open">
+                            <small>18:30 - 20:00</small>
+                            <strong>Janela livre</strong>
+                            <p>Disponível para encaixe</p>
+                        </div>
+                    </article>
+
+                    <article class="day-col">
+                        <header>
+                            <strong>Quinta</strong>
+                            <span>05 mar</span>
+                        </header>
+                        <div class="slot slot--open">
+                            <small>08:00 - 11:00</small>
+                            <strong>Bloco livre</strong>
+                            <p>Sem atendimentos confirmados</p>
+                        </div>
+                        <div class="slot slot--busy">
+                            <small>13:00 - 14:30</small>
+                            <strong>Manutenção preventiva</strong>
+                            <p>Edifício São Lucas · Centro</p>
+                        </div>
+                        <div class="slot slot--open">
+                            <small>15:00 - 19:00</small>
+                            <strong>Bloco livre</strong>
+                            <p>Disponível para novos pedidos</p>
+                        </div>
+                    </article>
+                </div>
+            </article>
+
+            <article class="card requests">
+                <div class="section-head">
+                    <h2>Solicitações pendentes</h2>
+                    <a href="chat.html">Responder no chat</a>
+                </div>
+
+                <div class="request-list">
+                    <div class="request-item">
+                        <div>
+                            <strong>Juliana Martins · Quadro elétrico</strong>
+                            <p>Centro · Pedido para hoje às 19h · Urgência alta</p>
+                        </div>
+                        <div class="request-item__actions">
+                            <button type="button">Recusar</button>
+                            <button type="button" class="btn-primary">Confirmar</button>
+                        </div>
+                    </div>
+                    <div class="request-item">
+                        <div>
+                            <strong>Condomínio Atlas · Revisão preventiva</strong>
+                            <p>Jardim Sul · Pedido para 04 mar às 08h · Recorrente</p>
+                        </div>
+                        <div class="request-item__actions">
+                            <button type="button">Recusar</button>
+                            <button type="button" class="btn-primary">Confirmar</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+
+        <aside class="side-column">
+            <article class="card editor">
+                <h3>Editar atendimento</h3>
+                <p>Aplicar ajustes no atendimento selecionado sem sair da agenda.</p>
+
+                <label>
+                    <span>Serviço</span>
+                    <input type="text" value="Troca de disjuntor geral">
+                </label>
+                <label>
+                    <span>Cliente</span>
+                    <input type="text" value="Juliana Martins">
+                </label>
+                <label>
+                    <span>Data</span>
+                    <input type="date" value="2026-03-03">
+                </label>
+                <div class="editor__row">
+                    <label>
+                        <span>Início</span>
+                        <input type="time" value="19:00">
+                    </label>
+                    <label>
+                        <span>Fim</span>
+                        <input type="time" value="20:00">
+                    </label>
+                </div>
+                <label>
+                    <span>Endereço</span>
+                    <input type="text" value="Rua das Flores, 120 - Centro">
+                </label>
+                <label>
+                    <span>Observações</span>
+                    <textarea rows="4">Cliente relatou quedas de energia na cozinha e lavanderia.</textarea>
+                </label>
+
+                <div class="editor__actions">
+                    <button type="button">Cancelar</button>
+                    <button type="button" class="btn-primary">Salvar alterações</button>
+                </div>
+            </article>
+
+            <article class="card availability">
+                <h3>Disponibilidade rápida</h3>
+                <div class="availability-list">
+                    <label><input type="checkbox" checked> Atender emergências após 18h</label>
+                    <label><input type="checkbox" checked> Aceitar encaixe no mesmo dia</label>
+                    <label><input type="checkbox"> Bloquear manhã de sábado</label>
+                </div>
+            </article>
+        </aside>
+    </main>
+</body>
+
+</html>
