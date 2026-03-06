@@ -13,4 +13,4 @@ Fidelidade: Sistema de reputação (Rank) atrelado ao volume de transações pag
 Geolocalização: Uso de CEP + Fórmula de Haversine (linha reta) ou Tabela de Bairros Fixa.
 Custo Zero: Integração com ViaCEP (grátis) para conversão de endereços.
 5. Resolução de B.O. (MVP)
-Disputa: Botão "Não Confirmo" que bloqueia o repasse e gera alerta para os fundadores (vocês) resolverem via suporte.
+Disputa: Botão "Não Confirmo" que bloqueia o repasse e gera alerta para os fundadores resolverem via suporte.
